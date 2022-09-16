@@ -12,4 +12,10 @@ router.delete("/deleteStudent", new Endpoint().deleteStudentEndpoint);
 //get student
 router.get("/getStudent", new Endpoint().getStudentEndpoint);
 
+//update student
+
+//update score
+
+//add subject
+
 module.exports = router;
