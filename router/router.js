@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const { Endpoint } = require('../controller/endpoint');
 
-//router.get("/getData", new Entrance().sentAllDataEntrance);
+//create student
+router.post("/createStudent", new Endpoint().createStudentEndpoint);
 
 module.exports = router;
