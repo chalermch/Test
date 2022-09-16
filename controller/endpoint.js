@@ -25,10 +25,10 @@ class Endpoint {
         new Logic().getStudentLogic(res);
     }
 
-    updateStudentEndpoint = (req, res) => {
+    updateStudentNameEndpoint = (req, res) => {
         this.dataStudent.student_id = req.body.student_id;
-        this.dataStudent.name = req.body.name;
-        this.dataStudent.last_name = req.body.last_name;
+        this.dataStudent.name = req.body.student_name;
+        this.dataStudent.last_name = req.body.student_lastname;
         new Logic().updateStudentLogic(this.dataStudent, res);
     }
 

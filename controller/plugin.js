@@ -63,7 +63,8 @@ class Plugin {
             })
     }
 
-    updateStudentPlugin = (student, res) => {
+    updateStudentNamePlugin = (student, res) => {
+        
         let sql = `UPDATE Student
         SET name = ?, last_name = ?
         WHERE student_id = ?`

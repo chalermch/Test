@@ -21,8 +21,8 @@ class Logic {
     }
 
     //update student
-    updateStudentLogic = (student, res) => {
-        new Plugin().updateStudentPlugin(student, res);
+    updateStudentNameLogic = (student, res) => {
+        new Plugin().updateStudentNamePlugin(student, res);
     }
 
     //add subject

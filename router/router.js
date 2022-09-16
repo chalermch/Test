@@ -13,7 +13,7 @@ router.delete("/deleteStudent", new Endpoint().deleteStudentEndpoint);
 router.get("/getStudent", new Endpoint().getStudentEndpoint);
 
 //update student
-router.put("/updateStudent", new Endpoint().updateStudentEndpoint);
+router.put("/updateStudentName", new Endpoint().updateStudentEndpoint);
 // router.put("/updateStudent/:id", new Endpoint().updateStudentEndpoint);
 
 //add subject
