@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { Endpoint } = require('../controller/endpoint.js');
+const { Endpoint } = require("../controller/endpoint.js");
 
 //create student
 router.post("/createStudent", new Endpoint().createStudentEndpoint);
@@ -29,5 +29,12 @@ router.put("/updateScore", new Endpoint().updateScoreEndpoint);
 
 //update subject
 router.put("/updateSubject", new Endpoint().updateSubjectEndpoint);
+
+router.get ( "/", function ( req, res ) 
+	{
+		res.render ( "homepage" , {title: "I just code IT [Youtube Channel]"});	
+	}
+)
+
 
 module.exports = router;

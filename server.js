@@ -7,6 +7,7 @@ const helmet = require('helmet');
 
 server.set("port", process.env.PORT || 3000);
 
+server.set ( "view engine", "ejs" );
 server.use(bodyParser.json())
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(cors());
