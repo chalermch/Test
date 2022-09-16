@@ -53,6 +53,13 @@ class Endpoint {
         new Logic().updateScoreLogic(this.dataScore, res);
     }
 
+    updateSubjectEndpoint = (req, res) => {
+        this.dataSubject.subject_id = req.body.subject_id;
+        this.dataSubject.subject_name = req.body.subject_name;
+        this.dataSubject.teacher_name = req.body.teacher_name;
+        new Logic().updateSubjectLogic(this.dataSubject, res);
+    }
+
 }
 module.exports = {
     Endpoint

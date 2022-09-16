@@ -162,6 +162,27 @@ class Plugin {
         )
     }
 
+    updateSubjectPlugin = (subject, res) => {
+        let sql =  `UPDATE Subject
+        SET subject_name = ? , teacher_name = ?
+        WHERE subject_id = ?`
+        connection.query(
+            sql, [
+                subject.subject_name,
+                subject.teacher_name,
+                subject.subject_id,
+            ],
+            function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("update subject finished");
+                    return res.status(201).send({ response: result });
+                }
+            }
+        )
+    }
+
 
 }
 module.exports = {

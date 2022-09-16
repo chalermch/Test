@@ -40,6 +40,11 @@ class Logic {
         new Plugin().updateScorePlugin(score, res);
     }
 
+    //update subject
+    updateSubjectLogic = (subject, res) => {
+        new Plugin().updateSubjectPlugin(subject, res);
+    }
+
 
 }
 module.exports = {
