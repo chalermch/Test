@@ -31,6 +31,11 @@ class Logic {
     addSubjectLogic = (subject, res) => {
         new Plugin().addSubjectPlugin(subject, res);
     }
+
+    //add score
+    addScore = (score, res) => {
+        new Plugin().addSubjectPlugin(score, res);
+    }
 }
 module.exports = {
     Logic

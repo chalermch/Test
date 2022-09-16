@@ -38,6 +38,13 @@ class Endpoint {
         new Logic().addSubjectLogic(this.dataSubject, res);
     }
 
+    addScoreEndpoint = (req, res) => {
+        this.dataStudent.student_id = req.body.student_id;
+        this.dataSubject.subject_id = req.body.subject_id;
+        score = req.body.score;
+        new Logic().addScoreLogic(this.dataStudent.student_id, this.dataSubject.subject_id, score, res);
+    }
+
 }
 module.exports = {
     Endpoint

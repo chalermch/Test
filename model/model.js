@@ -8,5 +8,8 @@ module.exports = {
         subject_id: "",
         subject_name: "",
         teacher_name: "",
+    },
+    dataScoreModel: {
+        score: "",
     }
 }
