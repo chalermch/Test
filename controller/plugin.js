@@ -43,7 +43,11 @@ class Plugin {
     }
 
     getAllStudentPlugin = (res) => {
-        let sql = `SELECT * FROM Student`
+        let sql = ` SELECT st.student_id,name,last_name,sj.subject_name,sc.score 
+                    FROM Student st 
+                    INNER JOIN Score sc   on sc.student_id = st.student_id
+                    INNER JOIN Subject sj on sc.subject_id = sj.subject_id
+                    `
         connection.query(sql, function(err, result) {
             if (err) {
                 console.log(err);
