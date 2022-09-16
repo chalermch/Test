@@ -15,7 +15,7 @@ router.get("/getStudent", new Endpoint().getStudentEndpoint);
 router.get("/getUserStudent", new Endpoint().getUserStudentEndpoint);
 
 //update student
-router.put("/updateStudent", new Endpoint().updateStudentEndpoint);
+router.put("/updateStudentName", new Endpoint().updateStudentEndpoint);
 // router.put("/updateStudent/:id", new Endpoint().updateStudentEndpoint);
 
 //add subject

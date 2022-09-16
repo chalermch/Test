@@ -74,11 +74,12 @@ class Plugin {
             })
     }
 
-    updateStudentPlugin = (student, res) => {
-        let sql = `
-            UPDATE Student
-            SET name = ? , last_name = ?
-                WHERE student_id = ? `
+
+    updateStudentNamePlugin = (student, res) => {
+        let sql = `UPDATE Student
+        SET name = ?, last_name = ?
+        WHERE student_id = ?`
+
         connection.query(
             sql, [
                 student.name,
@@ -136,8 +137,7 @@ class Plugin {
                     score
                 )
             VALUES
-                ( ?
-                    , ? , ?
+                ( ?, ? , ?
                 )
             `
         connection.query(
