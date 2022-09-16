@@ -17,12 +17,17 @@ class Endpoint {
     }
 
     deleteStudentEndpoint = (req, res) => {
-        this.dataStudent = req.body.student_id;
+        this.dataStudent.student_id = req.body.student_id;
         new Logic().deleteStudentLogic(this.dataStudent, res);
     }
 
     getStudentEndpoint = (req, res) => {
         new Logic().getStudentLogic(res);
+    }
+
+    getUserStudentEndpoint = (req, res) => {
+        this.dataStudent.student_id = req.body.student_id;
+        new Logic().getUserStudentLogic(this.dataStudent, res);
     }
 
     updateStudentEndpoint = (req, res) => {

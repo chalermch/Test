@@ -11,13 +11,17 @@ class Logic {
 
     //delete student
     deleteStudentLogic = (student, res) => {
+
         new Plugin().deleteStudentPlugin(student, res);
     }
 
     //get student
     getStudentLogic = (res) => {
         new Plugin().getAllStudentPlugin(res);
+    }
 
+    getUserStudentLogic = (student, res) => {
+        new Plugin().getUserStudentPlugin(student, res);
     }
 
     //update student

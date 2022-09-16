@@ -11,6 +11,9 @@ router.delete("/deleteStudent", new Endpoint().deleteStudentEndpoint);
 //get student
 router.get("/getStudent", new Endpoint().getStudentEndpoint);
 
+//get student by id
+router.get("/getUserStudent", new Endpoint().getUserStudentEndpoint);
+
 //update student
 router.put("/updateStudent", new Endpoint().updateStudentEndpoint);
 // router.put("/updateStudent/:id", new Endpoint().updateStudentEndpoint);

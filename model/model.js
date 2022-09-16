@@ -13,5 +13,12 @@ module.exports = {
         student_id: "",
         subject_id: "",
         score: ""
+    },
+    userStudentModel: {
+        student_id: "",
+        name: "",
+        last_name: "",
+        subject_name: "",
+        score: ""
     }
 }
