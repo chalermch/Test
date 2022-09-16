@@ -1,4 +1,4 @@
-const connection = require('../datadase.connect/connector')
+const connection = require('../database.connect/connector')
 class Plugin {
 
     createStudentPlugin = (student, res) => {
