@@ -151,12 +151,12 @@ class Plugin {
                 score.student_id,
                 score.subject_id,
             ],
-            function(err) {
+            function(err, result) {
                 if (err) {
                     console.log(err);
                 } else {
                     console.log("update score finished");
-                    return res.status(201).send({ response: "update score fisnished"});
+                    return res.status(201).send({ response: result });
                 }
             }
         )
