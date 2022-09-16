@@ -14,6 +14,15 @@ class Endpoint {
         new Logic().createStudentLogic(this.dataStudent, res);
     }
 
+    deleteStudentEndpoint = (req, res) => {
+        this.dataStudent = req.body.student_id;
+        new Logic().deleteStudentLogic(this.dataStudent, res);
+    }
+
+    getStudentEndpoint = (req, res) => {
+        new Logic().getStudentLogic(res);
+    }
+
 }
 module.exports = {
     Endpoint

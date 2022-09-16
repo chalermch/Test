@@ -10,9 +10,21 @@ class Logic {
     }
 
     //delete student
-
+    deleteStudentLogic = (student, res) => {
+        new Plugin().deleteStudentPlugin(student, res);
+    }
 
     //get student
+    getStudentLogic = (res) => {
+        new Plugin().getAllStudentPlugin(res);
+
+    }
+
+    //update student
+
+    //update score
+
+    //add subject
 }
 module.exports = {
     Logic

@@ -29,6 +29,40 @@ class Plugin {
         )
     }
 
+    deleteStudentPlugin = (student, res) => {
+        let sql = ` DELETE FROM Student 
+                    WHERE student_id = ? `
+        connection.query(sql, [student.student_id],
+            function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    return res.status(201).send({ response: "delete student finish" })
+                }
+            })
+    }
+
+    getAllStudentPlugin = (res) => {
+        let sql = `SELECT * FROM Student`
+        connection.query(sql, function(err, result) {
+            if (err) {
+                console.log(err);
+            } else {
+                return res.status(200).send({ response: result });
+            }
+        })
+    }
+
+    getUserStudentPlugin = (student, res) => {
+        let sql = `SELECT * FROM Student WHERE student_id = ?`
+        connection.query(sql, [student.student_id],
+            function(err) {
+                if (err) {
+                    console.log(err);
+                }
+            })
+    }
+
 
 }
 module.exports = {
