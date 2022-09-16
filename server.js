@@ -1,5 +1,5 @@
 const express = require('express');
-const routes = require("./routes/routes");
+const routes = require("./router/router.js");
 const server = express()
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -14,7 +14,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(routes);
 
-server.listen(app.get("port"), () => {
-    console.log("Server started on port " + app.get("port"));
+server.listen(server.get("port"), () => {
+    console.log("Server started on port " + server.get("port"));
     console.log(`[HOST] http://localhost:3000/`);
 })
