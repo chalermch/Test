@@ -78,7 +78,7 @@ class Plugin {
                     console.log(err);
                 } else {
                     console.log("update student finished");
-                    return res.status(201).send({ response: "update student finished" })
+                    return res.status(201).send({ response: "update student finished" });
                 }
             }
         )
@@ -106,14 +106,14 @@ class Plugin {
                         console.log(err);
                     } else {
                         console.log("add subject finished");
-                        return res.status(201).send({ response: "create subject finished" })
+                        return res.status(201).send({ response: "create subject finished" });
                     }
                 }
             )
         }
 
     addScorePlugin = (score, res) => {
-        console.log(score);
+        // console.log(score);
             let sql = `INSERT INTO Score
             (
                 student_id, 
@@ -135,11 +135,32 @@ class Plugin {
                         console.log(err);
                     } else {
                         console.log("add score finished");
-                        return res.status(201).send({ response: "add score finished" })
+                        return res.status(201).send({ response: "add score finished" });
                     }
                 }
             )
         }
+    
+    updateScorePlugin = (score, res) => {
+        let sql = `UPDATE Score
+        SET score = ?
+        WHERE student_id = ? AND subject_id = ?`
+        connection.query(
+            sql, [
+                score.score,
+                score.student_id,
+                score.subject_id,
+            ],
+            function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("update score finished");
+                    return res.status(201).send({ response: "update score fisnished"});
+                }
+            }
+        )
+    }
 
 
 }

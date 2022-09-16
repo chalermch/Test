@@ -25,8 +25,6 @@ class Logic {
         new Plugin().updateStudentPlugin(student, res);
     }
 
-    //update score
-
     //add subject
     addSubjectLogic = (subject, res) => {
         new Plugin().addSubjectPlugin(subject, res);
@@ -36,6 +34,13 @@ class Logic {
     addScoreLogic = (score, res) => {
         new Plugin().addScorePlugin(score, res);
     }
+
+    //update score
+    updateScoreLogic = (score, res) => {
+        new Plugin().updateScorePlugin(score, res);
+    }
+
+
 }
 module.exports = {
     Logic

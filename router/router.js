@@ -20,6 +20,9 @@ router.put("/updateStudent", new Endpoint().updateStudentEndpoint);
 router.post("/addSubject", new Endpoint().addSubjectEndpoint);
 
 //add score
-router.post("/addscore", new Endpoint().addScoreEndpoint);
+router.post("/addScore", new Endpoint().addScoreEndpoint);
+
+//update score
+router.put("/updateScore", new Endpoint().updateScoreEndpoint);
 
 module.exports = router;

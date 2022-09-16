@@ -46,6 +46,13 @@ class Endpoint {
         new Logic().addScoreLogic(this.dataScore, res);
     }
 
+    updateScoreEndpoint = (req, res) => {
+        this.dataScore.student_id = req.body.student_id;
+        this.dataScore.subject_id = req.body.subject_id;
+        this.dataScore.score = req.body.score;
+        new Logic().updateScoreLogic(this.dataScore, res);
+    }
+
 }
 module.exports = {
     Endpoint
