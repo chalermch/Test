@@ -5,6 +5,7 @@ class Endpoint {
 
     constructor() {
         this.dataStudent = models.dataStudentModel;
+        this.dataSubject = models.dataSubjectModel;
     }
 
     createStudentEndpoint = (req, res) => {
@@ -21,6 +22,20 @@ class Endpoint {
 
     getStudentEndpoint = (req, res) => {
         new Logic().getStudentLogic(res);
+    }
+
+    updateStudentEndpoint = (req, res) => {
+        this.dataStudent.student_id = req.body.student_id;
+        this.dataStudent.name = req.body.name;
+        this.dataStudent.last_name = req.body.last_name;
+        new Logic().updateStudentLogic(this.dataStudent, res);
+    }
+
+    addSubjectEndpoint = (req, res) => {
+        this.dataSubject.subject_id = req.body.subject_id;
+        this.dataSubject.subject_name = req.body.subject_name;
+        this.dataSubject.teacher_name = req.body.teacher_name;
+        new Logic().addSubjectLogic(this.dataSubject, res);
     }
 
 }

@@ -21,10 +21,16 @@ class Logic {
     }
 
     //update student
+    updateStudentLogic = (student, res) => {
+        new Plugin().updateStudentPlugin(student, res);
+    }
 
     //update score
 
     //add subject
+    addSubjectLogic = (subject, res) => {
+        new Plugin().addSubjectPlugin(subject, res);
+    }
 }
 module.exports = {
     Logic
