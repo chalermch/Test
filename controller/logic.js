@@ -33,8 +33,8 @@ class Logic {
     }
 
     //add score
-    addScore = (score, res) => {
-        new Plugin().addSubjectPlugin(score, res);
+    addScoreLogic = (score, res) => {
+        new Plugin().addScorePlugin(score, res);
     }
 }
 module.exports = {

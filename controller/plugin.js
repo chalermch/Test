@@ -112,6 +112,35 @@ class Plugin {
             )
         }
 
+    addScorePlugin = (score, res) => {
+        console.log(score);
+            let sql = `INSERT INTO Score
+            (
+                student_id, 
+                subject_id,
+                score
+            )
+            VALUES
+            (
+                ?, ?, ?
+            )`
+            connection.query(
+                sql, [
+                    score.student_id,
+                    score.subject_id,
+                    score.score,
+                ],
+                function(err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("add score finished");
+                        return res.status(201).send({ response: "add score finished" })
+                    }
+                }
+            )
+        }
+
 
 }
 module.exports = {

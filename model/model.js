@@ -10,6 +10,8 @@ module.exports = {
         teacher_name: "",
     },
     dataScoreModel: {
-        score: "",
+        student_id: "",
+        subject_id: "",
+        score: ""
     }
 }
