@@ -67,6 +67,126 @@ class Plugin {
             })
     }
 
+    updateStudentPlugin = (student, res) => {
+        let sql = `UPDATE Student
+        SET name = ?, last_name = ?
+        WHERE student_id = ?`
+        connection.query(
+            sql, [
+                student.name,
+                student.last_name,
+                student.student_id
+            ],
+            function(err) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("update student finished");
+                    return res.status(201).send({ response: "update student finished" });
+                }
+            }
+        )
+    }
+
+    addSubjectPlugin = (subject, res) => {
+            let sql = `INSERT INTO Subject
+            (
+                subject_id, 
+                subject_name,
+                teacher_name
+            )
+            VALUES
+            (
+                ?, ?, ?
+            )`
+            connection.query(
+                sql, [
+                    subject.subject_id,
+                    subject.subject_name,
+                    subject.teacher_name,
+                ],
+                function(err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("add subject finished");
+                        return res.status(201).send({ response: "create subject finished" });
+                    }
+                }
+            )
+        }
+
+    addScorePlugin = (score, res) => {
+        // console.log(score);
+            let sql = `INSERT INTO Score
+            (
+                student_id, 
+                subject_id,
+                score
+            )
+            VALUES
+            (
+                ?, ?, ?
+            )`
+            connection.query(
+                sql, [
+                    score.student_id,
+                    score.subject_id,
+                    score.score,
+                ],
+                function(err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log("add score finished");
+                        return res.status(201).send({ response: "add score finished" });
+                    }
+                }
+            )
+        }
+    
+    updateScorePlugin = (score, res) => {
+        let sql = `UPDATE Score
+        SET score = ?
+        WHERE student_id = ? AND subject_id = ?`
+        connection.query(
+            sql, [
+                score.score,
+                score.student_id,
+                score.subject_id,
+            ],
+            function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("update score finished");
+                    return res.status(201).send({ response: result });
+                }
+            }
+        )
+    }
+
+    updateSubjectPlugin = (subject, res) => {
+        let sql =  `UPDATE Subject
+        SET subject_name = ? , teacher_name = ?
+        WHERE subject_id = ?`
+        connection.query(
+            sql, [
+                subject.subject_name,
+                subject.teacher_name,
+                subject.subject_id,
+            ],
+            function(err, result) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    console.log("update subject finished");
+                    return res.status(201).send({ response: result });
+                }
+            }
+        )
+    }
+
 
 }
 module.exports = {
