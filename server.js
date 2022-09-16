@@ -1,6 +1,6 @@
 const express = require('express');
-const routes = require("./router/router.js");
 const server = express()
+const routes = require("./router/router.js");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -8,7 +8,7 @@ const helmet = require('helmet');
 server.set("port", process.env.PORT || 3000);
 
 server.use(bodyParser.json())
-server.use(bodyParser.urlencoded({ extended: false }));
+server.use(bodyParser.urlencoded({ extended: true }));
 server.use(cors());
 server.use(helmet());
 server.use(express.json());

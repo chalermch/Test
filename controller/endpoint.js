@@ -1,17 +1,17 @@
 const { Logic } = require('./logic');
-const models = require('../model/model.js');
+const models = require('../model/model');
 
 class Endpoint {
 
     constructor() {
-        this.student = models.student
+        this.dataStudent = models.dataStudentModel;
     }
 
-    createStudentEndpoint = (res, req) => {
-        this.student.student_id = req.body.student_id;
-        this.student.name = req.body.name;
-        this.student.last_name = req.body.last_name;
-        new Logic().createStudentLogic(res, this.student);
+    createStudentEndpoint = (req, res) => {
+        this.dataStudent.student_id = req.body.student_id;
+        this.dataStudent.name = req.body.name;
+        this.dataStudent.last_name = req.body.last_name;
+        new Logic().createStudentLogic(this.dataStudent, res);
     }
 
 }

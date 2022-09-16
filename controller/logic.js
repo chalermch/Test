@@ -1,15 +1,16 @@
-const { Plugin } = require('../datadase.connect/connector');
+const { Plugin } = require('../controller/plugin');
 class Logic {
 
     //create student
-    createStudentLogic = (res, student) => {
+    createStudentLogic = (student, res) => {
         //validate empthy
 
         //add to database
-        new Plugin().createStudentPlugin(student);
+        new Plugin().createStudentPlugin(student, res);
     }
 
     //delete student
+
 
     //get student
 }
